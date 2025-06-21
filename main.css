@@ -1,0 +1,92 @@
+/* Remove margens e bordas do corpo */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+
+body {
+        display: flex;
+        justify-content: center; /* Alinha horizontalmente */
+        align-items: center;     /* Alinha verticalmente */
+        /* Define a imagem de fundo */
+        background-image: url('image/20252439_6225444.jpg'); /* substitua pelo caminho da sua imagem */
+        background-size: cover;      /* faz a imagem preencher toda a tela */
+        background-repeat: no-repeat; /* impede que a imagem se repita */
+        background-position: center; /* centraliza a imagem */
+        height: 100vh;               /* garante que o body ocupe 100% da altura da janela */
+}
+
+.container {
+      position: relative;
+      width: 600px;
+      height: 400px;
+    }
+
+/* Confete estilo */
+    .confete {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation: cair linear forwards;
+    }
+
+    @keyframes cair {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+h1 {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Pacifico', cursive;
+      font-size: 100px;
+      animation: piscarRGB 2s infinite;
+      color: #fff;
+      text-align: center;
+      z-index: 2;
+      pointer-events: none; /* deixa clique passar por cima */
+    }
+@keyframes piscarRGB {
+      0%   { color: red;     text-shadow: 0 0 20px red; }
+      25%  { color: lime;    text-shadow: 0 0 20px lime; }
+      50%  { color: blue;    text-shadow: 0 0 20px blue; }
+      75%  { color: yellow;  text-shadow: 0 0 20px yellow; }
+      100% { color: magenta; text-shadow: 0 0 20px magenta; }
+    }
+
+    .carrossel {
+      width: 600px;    /* nova largura */
+      height: 400px;   /* nova altura */
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    .slides {
+      display: flex;
+      width: calc(600px * 7); /* 7 imagens maiores */
+      animation: slide 14s infinite;
+    }
+
+    .slides img {
+      width: 600px;
+      height: 400px;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      14.28%  { transform: translateX(-600px); }
+      28.57%  { transform: translateX(-1200px); }
+      42.85%  { transform: translateX(-1800px); }
+      57.14%  { transform: translateX(-2400px); }
+      71.42%  { transform: translateX(-3000px); }
+      85.71%  { transform: translateX(-3600px); }
+      100%    { transform: translateX(0); }
+    }
+    

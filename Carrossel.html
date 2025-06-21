@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/icon.png" type="image/png">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Aniversário</title>
+</head>
+
+<body>
+    <audio autoplay loop>
+        <source src="/audio/xuxa-parabens.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <h1>Feliz Aniversário!</h1>
+    <br>
+    <div class="carrossel">
+        <div class="slides">
+            <img src="image/01.jpg" class="active" alt="1">
+            <img src="image/05.jpg" alt="2">
+            <img src="image/06.jpg" alt="3">
+            <img src="image/07.jpg" alt="4">
+            <img src="image/09.jpg" alt="5">
+            <img src="image/10.jpg" alt="6">
+            <img src="image/11.jpg" alt="7">
+        
+        <!-- Adicione mais imagens conforme quiser -->
+        </div>
+        
+    </div>
+
+    <script>
+        // Confete animado
+        function criarConfete() {
+        const confete = document.createElement("div");
+        confete.classList.add("confete");
+        document.body.appendChild(confete);
+
+        // Posição e cor aleatória
+        confete.style.left = Math.random() * 100 + "vw";
+        confete.style.top = "-10px";
+        confete.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confete.style.animationDuration = (Math.random() * 2 + 3) + "s";
+
+        // Remover confete depois da animação
+        setTimeout(() => {
+            confete.remove();
+        }, 5000);
+        }
+
+        // Soltar confetes continuamente por 3 segundos
+        const intervalo = setInterval(criarConfete, 100);
+        setTimeout(() => clearInterval(intervalo), 3000);
+    </script>
+
+</body>
+</html>
